@@ -22,6 +22,12 @@ Użytkownicy manualnie tworzący fiszki często zmagają się z czasochłonnośc
   - Funkcjonalność zmiany hasła i usuwania konta.
 - Logi generowania:
   - Zapisywanie zdarzeń generowania fiszek w dedykowanej tabeli do późniejszej analizy.
+- Sesja nauki z algorytmem powtórek:
+  - Dedykowany widok "Sesja nauki" dostępny po zalogowaniu.
+  - Integracja z zewnętrznym algorytmem powtórek do efektywnej nauki.
+  - Możliwość przeglądania fiszek w trybie nauki (najpierw przód, po kliknięciu tył).
+  - Ocenianie stopnia przyswojenia wiedzy z danej fiszki.
+  - Losowy wybór kolejnych fiszek przez algorytm.
 
 ## 4. Zakres MVP
 - Brak implementacji zaawansowanego algorytmu powtórek (np. SuperMemo, Anki).
@@ -41,6 +47,7 @@ Kryteria akceptacji:
 - System przyjmuje tekst w określonym zakresie znaków.
 - AI generuje maksymalnie 10 fiszek-kandydatów.
 - Wygenerowane fiszki są prezentowane do recenzji przez użytkownika.
+- W przypadku problemów z API lub braku odpowiedzi modelu, użytkownik zobaczy stosowny komunikat o błędzie.
 
 US-002
 Tytuł: Recenzja wygenerowanych fiszek
@@ -62,6 +69,7 @@ Opis: Jako użytkownik chcę przeglądać zapisane fiszki, korzystając z wyszuk
 Kryteria akceptacji:
 - Lista fiszek jest wyświetlana z możliwością wyszukiwania.
 - Wyniki są paginowane (np. 10 fiszek na stronę).
+- Wyniki widoczne w ramach widoku listy "Moje fiszki".
 
 US-005
 Tytuł: Edycja fiszek
@@ -85,6 +93,17 @@ Kryteria akceptacji:
 - Rejestracja odbywa się przy użyciu adresu email i hasła.
 - System umożliwia logowanie oraz zmianę hasła.
 - Użytkownik może usunąć konto po potwierdzeniu operacji.
+
+US-008
+Tytuł: Sesja nauki z algorytmem powtórek
+Opis: Jako użytkownik chcę korzystać z dedykowanego widoku "Sesja nauki", który wykorzystuje zewnętrzny algorytm powtórek, aby efektywnie uczyć się treści z moich fiszek.
+Kryteria akceptacji:
+- Po zalogowaniu dostępna jest opcja "Sesja nauki".
+- System wyświetla najpierw przód fiszki.
+- Po kliknięciu system pokazuje tył fiszki.
+- Użytkownik może ocenić stopień przyswojenia wiedzy z danej fiszki.
+- Algorytm losowo wybiera kolejną fiszkę do pokazania.
+- System zapisuje postępy nauki użytkownika.
 
 ## 6. Metryki sukcesu
 - Co najmniej 75% wygenerowanych przez AI fiszek jest akceptowanych przez użytkownika.
